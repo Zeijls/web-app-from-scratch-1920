@@ -1,22 +1,3 @@
-// fetch('https://www.rijksmuseum.nl/api/nl/collection?key=uc0ncT1V&involvedMaker=Rembrandt+van+Rijn')
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((myJson) => {
-//     console.log(myJson);
-//     dataOphalen(myJson);
-//   });
-//
-//   function dataOphalen(myJson) {
-//     let data = myJson;
-//     console.log(data.artObjects[0]);
-//   }
-//
-//   setTimeout(function dataOphalen() {
-//     console.log('there');
-//   }, 5000);
-
-
   const rijksAPI = 'https://www.rijksmuseum.nl/api/nl/collection?key=uc0ncT1V&involvedMaker=Rembrandt+van+Rijn'
   const rijksContainer = document.getElementById('rijksContainer');
 
@@ -26,23 +7,35 @@
     // render(fallbackData);
   }
 
+  var rendero = function (url, title) {
+    let result = document.createElement('img');
+    result.classList.add('results');
+    result.src = url;
+    document.querySelector('.wrapper').appendChild(result);
+  };
+
   fetch(rijksAPI)
-  .then((response) => {
+    .then(response => {
     return response.json();
   })
-  .then((myJson) => {
-     render(myJson);
-  });
-
-  function render(rijksData){
-    console.log(rijksData)
-    console.log(rijksContainer)
-      rijksData.artObjects.map (function (x) {
-      rijksContainer.insertAdjacentHTML('beforeend', `
-      <li>
-          <img src=${x.webImage.url} alt="">
-          <section>${x.title}</section>
-          <section>${x.productionPlaces}</section>
-      </li>`)
+  .then(myJson => {
+       for (let i = 0, length = myJson.artObjects.length; i < length; i++){
+         rendero(myJson.artObjects[i].webImage.url);
+       }
   })
-}
+
+//    function render(rijksData){
+//      console.log(rijksData)
+//      console.log(rijksContainer)
+
+//        rijksData.artObjects.map (function (x) {
+//        rijksContainer.insertAdjacentHTML('beforeend', `
+//        <li>
+//            <img src=${x.webImage.url} alt="">
+//            <section>${x.title}</section>
+//            <section>${x.productionPlaces}</section>
+//        </li>`)
+//    })
+//  }
+
+
