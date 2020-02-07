@@ -67,6 +67,10 @@ ul img {
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
+body > section > div {
+  /* width: 80%; */
+}
 img {
   max-width: 100%;
 }
