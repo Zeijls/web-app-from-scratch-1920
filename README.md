@@ -4,11 +4,11 @@
 
 ## Actor Diagram
 
+![Actor Diagram](./docs/img/actordiagram.png)
+
 ## Interactive Diagram
 
-![Actor Diagram](./img/actordiagram.png)
-
-![Interactive Diagram](./img/interactivediagram.png)
+![Interactive Diagram](./docs/img/interactivediagram.png)
 
 ## Description
 
