@@ -6,9 +6,9 @@
 
 ## Interactive Diagram
 
-![Front-page](img/actordiagram.png)
+![Actor Diagram](./img/actordiagram.png)
 
-![Front-page](img/interactivediagram.png)
+![Interactive Diagram](./img/interactivediagram.png)
 
 ## Description
 
