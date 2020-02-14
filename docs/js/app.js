@@ -12,22 +12,28 @@ fetch(rijksAPI)
 
   .then(myJson => {
     console.log(myJson);
-    render(myJson)
+    render(myJson);
   });
 
-   function render(rijksData){
-     console.log(rijksData)
-     console.log(rijksContainer)
+function render(rijksData) {
+  console.log(rijksData);
+  console.log(rijksContainer);
 
-       rijksData.artObjects.map (function (x) {
-       rijksContainer.insertAdjacentHTML('beforeend', `
+  rijksData.artObjects.map(function(x) {
+    rijksContainer.insertAdjacentHTML(
+      "beforeend",
+      `
        <li>
            <img src=${x.webImage.url} alt="">
-           <section>${x.title}</section>
-           <section>${x.productionPlaces}</section>
-       </li>`)
-   })
- }
+       
+       </li>`
+    );
+  });
+}
+
+// Titel en productieplaats
+// <section>${x.title}</section>
+// <section>${x.productionPlaces}</section>
 
 // Routen
 routie({
@@ -37,8 +43,8 @@ routie({
   RembrandtvanRijn: () => {
     updateUI("RembrandtvanRijn");
   },
-  Top: () =>{
-    removeTopBar()
+  Top: () => {
+    removeTopBar();
   }
 });
 
@@ -47,7 +53,7 @@ routie({
 
 // Class toevoegen en verwijderen
 function updateUI(route) {
-  removeTopBar()
+  removeTopBar();
   activeSection = document.querySelector(`[data-route=${route}]`);
   console.log(activeSection);
   activeSection.classList.add("active");
@@ -58,7 +64,3 @@ function removeTopBar() {
     section.classList.remove("active");
   });
 }
-
-
-
-
