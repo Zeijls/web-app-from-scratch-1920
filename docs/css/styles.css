@@ -16,7 +16,7 @@ body {
 /* Header  */
 
 body>header>h1 {
-  font-size: 7vw;
+  font-size: 3vw;
   text-align: center;
 }
 
@@ -125,6 +125,59 @@ section[data-route="RembrandtvanRijn"] {
   height: 100px;
   object-fit: cover;
 } */
+
+/* Detailpagina */
+
+/* body>main {
+  max-height: 1000px;
+} */
+
+section[data-route="painting"] {
+  width: 80%;
+  height: 650px;
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+
+}
+
+section[data-route="painting"] img {
+  width: 70%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+section[data-route="painting"] section {
+  color: white;
+  font-size: 1.5em;
+}
+
+section[data-route="painting"] section:nth-of-type(1) {
+  font-size: 2em;
+  margin: 30px 0 30px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+section[data-route="painting"] section:nth-of-type(2) {
+  font-size: 1.5em;
+  margin: 0 0 0 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section[data-route="painting"] a {
+  color: white;
+  margin: 0 0 0 20px;
+  font-size: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+
+}
+
+
 
 /* Footer */
 
