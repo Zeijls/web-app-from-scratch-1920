@@ -7,6 +7,7 @@ const sections = document.querySelectorAll("section");
 let data = null;
 
 // Fetch
+// Bron: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 fetch(rijksAPI)
   .then(response => {
     return response.json();
@@ -16,13 +17,14 @@ fetch(rijksAPI)
     data = myJson;
     init(data);
   });
+
+// Overzichtspagina
 function init(data) {
   const activeSection = document.querySelector("[data-route=painting]");
   console.log(activeSection);
-  function render(rijksData) {
-    // console.log(rijksData);
-    // console.log(rijksContainer);
+  function render() {
     let i = 0;
+    // Haalt de schilderijen op voor de overzichtspagina
     data.artObjects.map(function(x) {
       rijksContainer.insertAdjacentHTML(
         "beforeend",
@@ -35,11 +37,15 @@ function init(data) {
     });
   }
 
+  // Data renderen voor detailpagina
   function renderDetail(id) {
+    // Tomas geholpen voor de filter en reduce
     console.log(data);
     const painting = data.artObjects
       .filter(obj => obj.id == id)
       .reduce(obj => obj);
+
+    // Schilderij, titel en productieplaats ophalen
     console.log(painting);
     activeSection.insertAdjacentHTML(
       "beforeend",
@@ -52,37 +58,22 @@ function init(data) {
     </div>
     `
     );
-    // activeSection.insertAdjacentHTML(
-    //   "beforeend",
-    //   `
-    //   <li>
-    //   <img src=${x.webImage.url} alt="">
-    //   <section>${x.title}</section>
-    //   <section>${x.productionPlaces}</section>
-    //   </li>`
-    // );
   }
-  // Titel en productieplaats
-  // <section>${x.title}</section>
-  // <section>${x.productionPlaces}</section>
 
   // Routen
+  // Bron: http://projects.jga.me/routie/
   routie({
+    // Alle data renderen
     "": () => {
       render(data);
     },
-    // vanGogh: () => {
-    //   updateUI("vanGogh");
-    // },
-    // RembrandtvanRijn: () => {
-    //   updateUI("RembrandtvanRijn");
-    // },
+    //
     "painting-:id": id => {
       console.log(id);
       updateUI(id);
     },
     Top: () => {
-      removeTopBar();
+      removeOldClass();
     }
   });
 
@@ -90,16 +81,18 @@ function init(data) {
   // update UI from route (hashchange)
   // Class toevoegen en verwijderen
   function updateUI(route) {
-    removeTopBar();
+    // active class wordt verwijderd voordat er een nieuwe class wordt toegevoegd
+    removeOldClass();
+    //Class wrapper wordt verwijderd
     document.querySelector(".wrapper").remove();
 
+    // Voegt class active toe aan wrapper (overzichtspagina)
     console.log(document.querySelector(".wrapper"));
-    // const activeSection = document.querySelector(`[data-route=${route}]`);
-    // console.log(activeSection);
     activeSection.classList.add("active");
     renderDetail(route);
   }
-  function removeTopBar() {
+
+  function removeOldClass() {
     activeSection.innerHTML = "";
     sections.forEach(section => {
       section.classList.remove("active");
