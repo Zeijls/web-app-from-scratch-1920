@@ -1,10 +1,14 @@
-const rijksAPI =
-  "https://www.rijksmuseum.nl/api/nl/collection?key=uc0ncT1V&involvedMaker=Rembrandt+van+Rijn";
-const rijksContainer = document.getElementById("rijksContainer");
-const painting = document.getElementById("painting");
-/*** Handle routes -> refactor into module later ***/
-const sections = document.querySelectorAll("section");
-// let data = null;
+const baseURl = "https://www.rijksmuseum.nl/api/nl/collection?key=";
+const key = "uc0ncT1V";
+const involvedMaker = "&involvedMaker=";
+const maker = "Rembrandt+van+Rijn";
+
+const rijksAPI = baseURl + key + involvedMaker + maker;
+
+// const rijksContainer = document.getElementById("rijksContainer");
+// const painting = document.getElementById("painting");
+// /*** Handle routes -> refactor into module later ***/
+// const sections = document.querySelectorAll("section");
 
 // Fetch
 // Bron: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
@@ -22,7 +26,6 @@ export const api = {
           reject(err);
         });
     });
-    // return data;
   }
 };
 

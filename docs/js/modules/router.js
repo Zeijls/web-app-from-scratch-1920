@@ -8,20 +8,11 @@ export const router = {
   handle: function() {
     routie({
       // Alle data renderen
-      "": () => {
-        console.log("hsadl");
-        // render.renderDetail(data);
-      },
-      //
-      "painting-:id": id => {
+      "": () => {},
+      // Een schilderij renderen
+      "painting/:id": id => {
         console.log(id);
-        // update.removeOldClass();
         update.updateUI(id);
-
-        // render.renderDetail(api.getData());
-      },
-      Top: () => {
-        // update.removeOldClass();
       }
     });
   }

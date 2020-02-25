@@ -5,31 +5,18 @@ import { api } from "./api.js";
 // update UI from route (hashchange)
 // Class toevoegen en verwijderen
 export const update = {
-  updateUI: function(route) {
+  updateUI: function(id) {
     let section = document.getElementById("painting");
-    // active class wordt verwijderd voordat er een nieuwe class wordt toegevoegd
-    // removeOldClass();
-    // console.log("jeej");
-    console.log(section);
-    //Class wrapper wordt verwijderd
-    let wrapper = document.querySelector(".wrapper");
-    console.log(wrapper);
-    wrapper.remove();
-    // Voegt class active toe aan wrapper (overzichtspagina)
-    // const activeSection = document.querySelector(".wrapper");
 
+    //Class wrapper wordt verwijderd (Zodat alleen detailpagina wordt weergegeven)
+    let wrapper = document.querySelector(".wrapper");
+    wrapper.remove();
+
+    // Voegt class active toe aan wrapper (overzichtspagina)
     section.classList.add("active");
     api.getData().then(data => {
       const art = data.artObjects;
-      render.renderDetail(art);
-    });
-  },
-
-  removeOldClass: function() {
-    activeSection.innerHTML = "";
-    console.log("pipo");
-    sections.forEach(section => {
-      section.classList.remove("active");
+      render.renderDetail(art, id);
     });
   }
 };
