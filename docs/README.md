@@ -45,11 +45,11 @@ Om gebruik te maken van de API van het Rijksmuseum heeft men een key nodig. Deze
 
 ## Actor Diagram
 
-![Actor Diagram](./docs/img/actordiagram.png)
+![Actor Diagram](./docs/img/actordiagram2.png)
 
 ## Interactive Diagram
 
-![Interactive Diagram](./docs/img/interactivediagram.png)
+![Interactive Diagram](./docs/img/interactivediagram2.png)
 
 ## Bronnen
 
