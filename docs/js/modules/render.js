@@ -11,8 +11,27 @@ export const render = {
 
   renderOverview: function(art) {
     let i = 0;
+    function isLongEnough(value) {
+      return value.title.length > 30;
+    }
+
+    const newData = art.filter(isLongEnough);
+    const contentwrapper = document.getElementById("content");
+    const painting = document.getElementById("painting");
+    contentwrapper.insertAdjacentHTML(
+      "afterbegin",
+      `
+    <div class="wrapper">
+    <ul id="rijksContainer">
+    </ul>
+  </div>`
+    );
+    painting.innerHTML = "";
+
+    const rijksContainer = document.getElementById("rijksContainer");
+
     // Haalt de schilderijen op voor de overzichtspagina
-    art.map(function(x) {
+    newData.map(function(x) {
       rijksContainer.insertAdjacentHTML(
         "beforeend",
         `
@@ -26,8 +45,13 @@ export const render = {
 
   renderDetail: function(art, id) {
     const activeSection = document.querySelector("[data-route=painting]");
-    console.log(art);
-    console.log(id);
+
+    function isLongEnough(value) {
+      return value.title.length > 30;
+    }
+    const newData = art.filter(isLongEnough);
+
+    // console.log(id);
     // update.removeOldClass();
     // acc = accumulator (getelde waarde)
     // cur = currentValue (huidige waarde)

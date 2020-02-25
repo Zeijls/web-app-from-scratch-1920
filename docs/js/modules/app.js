@@ -5,9 +5,7 @@ import { router } from "./router.js";
 export const app = {
   init: function() {
     api.getData().then(data => {
-      const art = data.artObjects;
-      render.renderOverview(art);
-      router.handle(art);
+      router.handle(data.artObjects);
     });
 
     // const fetchData = new Promise(function(resolve, reject) {

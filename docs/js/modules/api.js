@@ -5,7 +5,6 @@ const maker = "Rembrandt+van+Rijn";
 
 const rijksAPI = baseURl + key + involvedMaker + maker;
 
-// const rijksContainer = document.getElementById("rijksContainer");
 // const painting = document.getElementById("painting");
 // /*** Handle routes -> refactor into module later ***/
 // const sections = document.querySelectorAll("section");
