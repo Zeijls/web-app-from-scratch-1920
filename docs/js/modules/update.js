@@ -6,7 +6,7 @@ import { api } from "./api.js";
 // Class toevoegen en verwijderen
 export const update = {
   updateUI: function(route) {
-    let section = document.getElementById("paintingDetail");
+    let section = document.getElementById("painting");
     // active class wordt verwijderd voordat er een nieuwe class wordt toegevoegd
     // removeOldClass();
     // console.log("jeej");
@@ -19,8 +19,10 @@ export const update = {
     // const activeSection = document.querySelector(".wrapper");
 
     section.classList.add("active");
-
-    render.renderDetail(api.getData());
+    api.getData().then(data => {
+      const art = data.artObjects;
+      render.renderDetail(art);
+    });
   },
 
   removeOldClass: function() {

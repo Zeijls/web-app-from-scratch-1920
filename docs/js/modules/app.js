@@ -4,11 +4,10 @@ import { router } from "./router.js";
 // // Overzichtspagina
 export const app = {
   init: function() {
-    const activeSection = document.querySelector("[data-route=painting]");
-
-    api.getData().then(value => {
-      render.renderOverview(value);
-      router.handle();
+    api.getData().then(data => {
+      const art = data.artObjects;
+      render.renderOverview(art);
+      router.handle(art);
     });
 
     // const fetchData = new Promise(function(resolve, reject) {

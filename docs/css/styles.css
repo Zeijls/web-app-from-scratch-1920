@@ -139,12 +139,14 @@ section[data-route="painting"] {
   display: flex;
   flex-direction: row;
   padding: 0;
+  z-index: 100;
 
 }
 
 section[data-route="painting"] img {
   width: 70%;
   height: 100%;
+
   /* overflow: hidden; */
 }
 

@@ -10,16 +10,19 @@ const sections = document.querySelectorAll("section");
 // Bron: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 export const api = {
   getData: function() {
-    let data = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       fetch(rijksAPI)
         .then(response => {
           return response.json();
         })
-        .then(myJson => {
-          resolve(myJson);
+        .then(data => {
+          resolve(data);
+        })
+        .catch(err => {
+          reject(err);
         });
     });
-    return data;
+    // return data;
   }
 };
 

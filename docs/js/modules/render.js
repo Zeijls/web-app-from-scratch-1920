@@ -2,11 +2,11 @@ import { update } from "./update.js";
 
 // Data renderen voor detailpagina
 export const render = {
-  renderOverview: function(data) {
+  renderOverview: function(art) {
     let i = 0;
-    console.log(data);
+    console.log(art);
     // Haalt de schilderijen op voor de overzichtspagina
-    data.artObjects.map(function(x) {
+    art.map(function(x) {
       rijksContainer.insertAdjacentHTML(
         "beforeend",
         `
@@ -18,14 +18,19 @@ export const render = {
     });
   },
 
-  renderDetail: function(id) {
+  renderDetail: function(art, id) {
+    const activeSection = document.querySelector("[data-route=painting]");
     console.log("jeej");
-    // Tomas geholpen voor de filter en reduce
-    console.log(data);
+    console.log(art);
     // update.removeOldClass();
-    const painting = data.artObjects
-      .filter(obj => obj.id == id)
-      .reduce(obj => obj);
+    // acc = accumulator (getelde waarde)
+    // cur = currentValue (huidige waarde)
+    // In de berekening acc = cur.id zijn gelijk aan elkaar, maar als id niet kan vinden behoudt hij de vorige waarde
+    // Bas heeft hiermee geholpen
+    // Bron: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+    const painting = art.reduce(
+      (acc, cur) => (acc = cur.id === id ? cur.id : acc)
+    );
 
     // Schilderij, titel en productieplaats ophalen
     console.log(painting);
