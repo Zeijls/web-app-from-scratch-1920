@@ -11,6 +11,7 @@ export const update = {
     //Class wrapper wordt verwijderd (Zodat alleen detailpagina wordt weergegeven)
     let wrapper = document.querySelector(".wrapper");
     wrapper.remove();
+    section.classList.remove("active");
 
     // Voegt class active toe aan wrapper (overzichtspagina)
     section.classList.add("active");

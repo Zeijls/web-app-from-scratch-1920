@@ -12,7 +12,7 @@ export const render = {
   renderOverview: function(art) {
     let i = 0;
     function isLongEnough(value) {
-      return value.title.length > 30;
+      return value.title.length >= 30;
     }
 
     const newData = art.filter(isLongEnough);
