@@ -2,11 +2,10 @@ import { update } from "./update.js";
 
 // Data renderen voor detailpagina
 export const render = {
-  loader: function(element) {
-    let elementId = document.getElementById(element);
-    let loadingImage =
-      '<div class="loading"><img src="./img/loading.gif" alt="loading"><p>Loading...</p></div>';
-    elementId.insertAdjacentHTML("beforeend", loadingImage);
+  loader: function(id) {
+    var id = document.getElementsByClassName("wrapper");
+    var render = '<img src="img/loading.gif " alt="loading">';
+    id.insertAdjacentHTML("beforeend", render);
   },
 
   renderOverview: function(art) {
