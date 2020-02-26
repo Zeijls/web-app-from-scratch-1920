@@ -7,11 +7,11 @@ import { update } from "./update.js";
 export const router = {
   handle: function(art) {
     routie({
-      // Alle data renderen
+      // Alle data renderen (overview)
       "": () => {
         render.renderOverview(art);
       },
-      // Een schilderij renderen
+      // Naar detail pagina (als hierop geklikt wordt)
       "painting/:id": id => {
         console.log(id);
         update.updateUI(id);

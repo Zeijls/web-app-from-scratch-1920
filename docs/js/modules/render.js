@@ -1,21 +1,23 @@
-import { update } from "./update.js";
-import { app } from "./app.js";
-
-// Data renderen voor detailpagina
 export const render = {
+  // Loading state
   loader: function(id) {
     var id = document.getElementById(id);
     var render =
       '<div class="loader"><img src="img/loading3.gif" alt="loading"><p>Loading...</p></div>';
+    // Insert adjacent HMTL
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
     id.insertAdjacentHTML("beforeend", render);
   },
 
+  // Renderen overview
   renderOverview: function(art) {
     let i = 0;
+    // Filter Titels met minder dan 30 tokens gaan eruit
     function isLongEnough(value) {
       return value.title.length >= 30;
     }
-
+    // Filtert de data boven de 30 tokens is true onder 30 is false
+    // https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     const newData = art.filter(isLongEnough);
     const contentwrapper = document.getElementById("overview");
     const painting = document.getElementById("painting");
@@ -27,11 +29,15 @@ export const render = {
     </ul>
   </div>`
     );
+    // Inner HTML
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
     painting.innerHTML = "";
 
     const rijksContainer = document.getElementById("rijksContainer");
 
     // Haalt de schilderijen op voor de overzichtspagina
+    // Map loopt door de data heen, en geeft het opgevraagde terug (ongeveer hetzelfde als forEach loop)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
     newData.map(function(x) {
       rijksContainer.insertAdjacentHTML(
         "beforeend",
@@ -44,6 +50,7 @@ export const render = {
     });
   },
 
+  // Rederen Detailpagina
   renderDetail: function(art, id) {
     const activeSection = document.querySelector("[data-route=painting]");
 
@@ -52,8 +59,6 @@ export const render = {
     }
     const newData = art.filter(isLongEnough);
 
-    // console.log(id);
-    // update.removeOldClass();
     // acc = accumulator (getelde waarde)
     // cur = currentValue (huidige waarde)
     // In de berekening acc = cur.id zijn gelijk aan elkaar, maar als id niet kan vinden behoudt hij de vorige waarde
@@ -81,7 +86,8 @@ export const render = {
 
   remove: function() {
     let div = document.getElementById("overview");
-
+    // While
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
     while (div.firstChild) {
       div.removeChild(div.firstChild);
     }

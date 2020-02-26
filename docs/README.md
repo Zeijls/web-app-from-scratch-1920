@@ -89,7 +89,7 @@ Week 1
 
 Week 2
 
-- [ ] Actor diagram.
+- [x] Actor diagram.
 - [ ] Interactive diagram
 - [x] Refactor code
 - [x] Key aanpassen in url (kijken issue van Marten)
@@ -97,13 +97,13 @@ Week 2
 Week 3
 
 - [x] Functies opdelen in modules
-- [ ] Error state?? (Feedback loading) States toevoegen
+- [x] States toevoegen (Feedback loading)
 - [x] 3. Reflect on work (Tuesday)
 
 - [ ] Nadelen client side renderen van HTML kunnen benoemen (Zoeken in aantekeningen)
 - [ ] Criteria nog goed doorlezen
 - [ ] Beoordeling voorbereiden
-- [ ] Best practices doorlezen
+- [x] Best practices doorlezen
 
 ## Punten voor in de toekomst
 
@@ -112,4 +112,17 @@ Week 3
 
 ## Bronnen
 
+- [Promise Then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+- [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Routen](http://projects.jga.me/routie/)
+- [Update UI from route](https://github.com/cmda-minor-web/web-app-from-scratch-1920/tree/master/examples)
+- [Insert Adjacent HTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+- [Inner HTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+- [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [Filter](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+- [While](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
 ## Credits
+
+- Robin Stut, hij hielp me met...

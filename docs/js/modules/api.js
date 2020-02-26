@@ -5,51 +5,24 @@ const maker = "Rembrandt+van+Rijn";
 
 const rijksAPI = baseURl + key + involvedMaker + maker;
 
-// const painting = document.getElementById("painting");
-// /*** Handle routes -> refactor into module later ***/
-// const sections = document.querySelectorAll("section");
-
 // Fetch
 // Bron: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 export const api = {
   getData: function() {
     return new Promise((resolve, reject) => {
+      // Data fetchen en terughalen in Json
       fetch(rijksAPI)
         .then(response => {
           return response.json();
         })
+        // Promise resolven
         .then(data => {
           resolve(data);
         })
+        // Als dit niet lukt, error
         .catch(err => {
           reject(err);
         });
     });
   }
 };
-
-// export const api = {
-//     getData: function() {
-//       return new Promise((resolve, reject) => {
-//         fetch(rijksAPI)
-//           .then(response => {
-//             return response.json();
-//           })
-//           .then(myJson => {
-//             resolve(myJson);
-//           });
-//       });
-//     }
-//   };
-
-// export const api = {
-//     getData: function() {
-//       return fetch(rijksAPI)
-//         .then(response => {
-//           return response.json();
-//         })
-//         .then(data => {
-//           return data;
-//         });
-//     }
-//   };
