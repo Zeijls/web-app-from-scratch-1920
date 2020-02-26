@@ -57,6 +57,7 @@ body>main>section {
   height: 1500px;
   margin-left: auto;
   margin-right: auto;
+  background-color: brown;
 }
 
 body>main>section>h2 {
@@ -135,7 +136,7 @@ body>main>section.active {
 section[data-route="painting"] {
   width: 80%;
   height: 500px;
-  background-color: brown;
+
   display: flex;
   flex-direction: row;
   padding: 0;
@@ -182,4 +183,18 @@ section[data-route="painting"] a {
   text-transform: uppercase;
   position: absolute;
   bottom: 20px;
+}
+
+/* Loading State */
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  height: 100px;
+  width: 100px;
+  margin-top: 100px;
 }

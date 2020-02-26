@@ -4,9 +4,16 @@ import { router } from "./router.js";
 // // Overzichtspagina
 export const app = {
   init: function() {
-    api.getData().then(data => {
-      router.handle(data.artObjects);
-    });
+    render.loader("overview");
+    // setTimeout(
+    api.getData().then(
+      data => {
+        render.remove();
+        router.handle(data.artObjects);
+      }
+      //   6000
+      // );
+    );
 
     // const fetchData = new Promise(function(resolve, reject) {
     //   resolve(api.getData());

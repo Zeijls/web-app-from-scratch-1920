@@ -1,10 +1,12 @@
 import { update } from "./update.js";
+import { app } from "./app.js";
 
 // Data renderen voor detailpagina
 export const render = {
   loader: function(id) {
-    var id = document.getElementsByClassName("wrapper");
-    var render = '<img src="img/loading.gif " alt="loading">';
+    var id = document.getElementById(id);
+    var render =
+      '<div class="loader"><img src="img/loading3.gif" alt="loading"><p>Loading...</p></div>';
     id.insertAdjacentHTML("beforeend", render);
   },
 
@@ -15,7 +17,7 @@ export const render = {
     }
 
     const newData = art.filter(isLongEnough);
-    const contentwrapper = document.getElementById("content");
+    const contentwrapper = document.getElementById("overview");
     const painting = document.getElementById("painting");
     contentwrapper.insertAdjacentHTML(
       "afterbegin",
@@ -75,5 +77,13 @@ export const render = {
         </div>
         `
     );
+  },
+
+  remove: function() {
+    let div = document.getElementById("overview");
+
+    while (div.firstChild) {
+      div.removeChild(div.firstChild);
+    }
   }
 };
