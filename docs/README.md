@@ -2,7 +2,8 @@
 
 ## Web App From Scratch @cmda-minor-web 1819
 
-![Front-page](img/frontpage.png)
+[Overzichtspagina](img/overview.png)
+[Detailpagina](img/detail.png)
 
 ## Inhoudspagina
 
