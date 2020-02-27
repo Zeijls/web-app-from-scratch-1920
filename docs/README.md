@@ -59,7 +59,7 @@ cd Pth/To/Folder
 Clone de repositroy
 
 ```
-    git clone https://github.com/MarjoleinAardewijn/web-app-from-scratch-1920.git
+    git clone https://github.com/Zeijls/web-app-from-scratch-1920.git
     cd web-app-from-scratch-1920
 ```
 
