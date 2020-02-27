@@ -1,6 +1,5 @@
 import { render } from "./render.js";
 import { update } from "./update.js";
-// import { api } from "./api.js";
 
 // Routen
 // Bron: http://projects.jga.me/routie/
@@ -13,7 +12,6 @@ export const router = {
       },
       // Naar detail pagina (als hierop geklikt wordt)
       "painting/:id": id => {
-        console.log(id);
         update.updateUI(id);
       }
     });

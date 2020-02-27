@@ -44,7 +44,7 @@ Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmu
 
 # Interactive Diagram
 
-![Interactive Diagram](./img/interactivediagram2.png)
+![Interactive Diagram](./img/interactiveDiagram.png)
 
 ## Gebruik
 
@@ -81,8 +81,8 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
 
 Week 1
 
-- [ ] 2. Readme afmaken (Marjolein en robin stut doorlezen)
-- [x] 3. Loading data asynchronously from an API (Monday / Tuesday)
+- [x] 2. Readme afmaken
+- [x] 3. Loading data asynchronously from an API
 - [x] MAP
 - [x] FILTER
 - [x] REDUCE
@@ -91,9 +91,9 @@ Week 1
 Week 2
 
 - [x] Actor diagram.
-- [ ] Interactive diagram
+- [x] Interactive diagram
 - [x] Refactor code
-- [x] Key aanpassen in url (kijken issue van Marten)
+- [x] Key aanpassen in url (Issue Marten)
 
 Week 3
 
@@ -101,15 +101,15 @@ Week 3
 - [x] States toevoegen (Feedback loading)
 - [x] 3. Reflect on work (Tuesday)
 
-- [ ] Nadelen client side renderen van HTML kunnen benoemen (Zoeken in aantekeningen)
-- [ ] Criteria nog goed doorlezen
-- [ ] Beoordeling voorbereiden
+- [x] Nadelen client side renderen van HTML kunnen benoemen (Zoeken in aantekeningen)
+- [x] Criteria nog goed doorlezen
+- [x] Beoordeling voorbereiden
 - [x] Best practices doorlezen
 
 ## Punten voor in de toekomst
 
 - [ ] Schilderijen van Rembrandt van Rijn ook in een filter zetten
-- [ ]
+- [ ] Betere flow
 
 ## Bronnen
 
@@ -126,4 +126,9 @@ Week 3
 
 ## Credits
 
-- Robin Stut, hij hielp me met...
+- Marjolein Aardewijn, heeft me geholpen met het werkend krijgen van de loading state
+- Joost Faber, zijn introductie les over de routie heeft me geholpen het te begrijpen en toe te passen
+- Robin Stut, heeft mij geholpen met de promise, hij gaf een error aan de de promise niet resolved was, terwijl de console dit wel aangaf.
+- Joost Faber, hij heeft mij geholpen met het refactoren van mijn routie
+- Robin Stut, heeft mij tijdens een nude klasje uitgelegd hoe je adv. insertAdjacentHTML de data die je wilt kunt renderen
+- Bas, heeft mij geholpen met de berekening in de reduce
