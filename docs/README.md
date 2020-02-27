@@ -108,8 +108,8 @@ Week 3
 
 ## Punten voor in de toekomst
 
-- [] Schilderijen van Rembrandt van Rijn ook in een filter zetten
-- []
+- [ ] Schilderijen van Rembrandt van Rijn ook in een filter zetten
+- [ ]
 
 ## Bronnen
 
