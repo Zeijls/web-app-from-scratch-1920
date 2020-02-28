@@ -48,15 +48,13 @@ Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmu
 
 ## Gebruik
 
-Ga via de terminal naar de folder waar je het project in wilt plaatsen.
-
-Go via the terminal to the folder you want the project to be placed:
+Ga via de terminal naar de folder waar je het projet wilt plaatsen:
 
 ```
 cd Pth/To/Folder
 ```
 
-Clone de repositroy
+Clone de repository
 
 ```
     git clone https://github.com/Zeijls/web-app-from-scratch-1920.git
@@ -69,9 +67,9 @@ Na het clonen, open het `index.html` bestnd in je localhost.
 
 In deze applicatie gebruik ik de API van het Rijksmuseum. In deze API is een groot deel van de collectie van het Rijksmuseum verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd in deze API.
 
-Om gebruik te maken van de API van het Rijksmuseum heb nodig. Deze kun je aanvragen bij de gevanceerde account instellingen op de site van het Rijksumseum. https://www.rijksmuseum.nl/en/rijksstudio/
+Om gebruik te maken van de API van het Rijksmuseum heb je een key nodig. Deze kun je aanvragen bij de gevanceerde account instellingen op de site van het Rijksumseum. https://www.rijksmuseum.nl/en/rijksstudio/
 
-Ik heb alleen de schilderijen van Rembrandt van Gogh gebruikt door de volgende endpoints te gebruiken.
+Ik heb alleen de schilderijen van Rembrandt van Rijn gebruikt door de volgende endpoints te gebruiken.
 
 > const rijksAPI = baseURl + key + involvedMaker + maker;
 
