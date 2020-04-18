@@ -149,3 +149,25 @@ section[data-route="painting"] a {
   width: 100px;
   margin-top: 100px;
 }
+
+/* Filterbuttons */
+
+.buttons {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.vRijn,
+.Goya {
+  background-color: brown;
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  margin: 1rem;
+
+
+}

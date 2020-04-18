@@ -1,6 +1,6 @@
 export const render = {
   // Loading state
-  loader: function(id) {
+  loader: function (id) {
     var id = document.getElementById(id);
     var render =
       '<div class="loader"><img src="img/loading3.gif" alt="loading"><p>Loading...</p></div>';
@@ -9,31 +9,8 @@ export const render = {
     id.insertAdjacentHTML("beforeend", render);
   },
 
-  // filterByArtist: function() {
-  //   let results = Array.from(document.querySelectorAll(".result > div"));
-  //   // Hide all results
-  //   results.forEach(function(result) {
-  //     result.style.display = "none";
-  //   });
-  //   // Filter results to only those that meet ALL requirements:
-  //   Array.from(
-  //     document.querySelectorAll(".filter input[rel]:checked"),
-  //     function(input) {
-  //       const attrib = input.getAttribute("rel");
-  //       results = results.filter(function(result) {
-  //         return result.classList.contains(attrib);
-  //       });
-  //     }
-  //   );
-  //   // Show those filtered results:
-  //   results.forEach(function(result) {
-  //     result.style.display = "block";
-  //   });
-  // },
-  // filterByArtist();
-
   // Renderen overview
-  renderOverview: function(art) {
+  renderOverview: function (art) {
     let i = 0;
     // Filter Titels met minder dan 30 tokens gaan eruit
     function isLongEnough(value) {
@@ -41,7 +18,7 @@ export const render = {
     }
     // Filtert de data boven de 30 tokens is true onder 30 is false
     // https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-    const newData = art.filter(isLongEnough);
+    // const newData = art.filter(isLongEnough);
     const contentwrapper = document.getElementById("overview");
     const painting = document.getElementById("painting");
     contentwrapper.insertAdjacentHTML(
@@ -61,26 +38,68 @@ export const render = {
     // Haalt de schilderijen op voor de overzichtspagina
     // Map loopt door de data heen, en geeft het opgevraagde terug (ongeveer hetzelfde als forEach loop)
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-    newData.map(function(x) {
-      rijksContainer.insertAdjacentHTML(
-        "beforeend",
-        `
+
+    // Filter buttons
+    const rijnButton = document.querySelector(".vRijn");
+    const goyaButton = document.querySelector(".Goya");
+
+    // Filter Rembrandt van Rijn
+    rijnButton.addEventListener("click", function (art) {
+      console.log("RijnButton is clicked!");
+      const rijnData = art.filter(
+        art.principalOrFirstMaker === "Rembrandt+van+Rijn"
+      );
+
+      rijnData.map(function (x) {
+        rijksContainer.insertAdjacentHTML(
+          "beforeend",
+          `
+             <li>
+                <a href="#painting/${x.id}" > <img src=${x.webImage.url} alt=""> </a>
+             </li>`
+        );
+        i++;
+      });
+    }),
+      // Filter Francisco de Goya
+      goyaButton.addEventListener("click", function (art) {
+        console.log("GoyaButton is clicked!");
+        const goyaData = art.filter(
+          art.principalOrFirstMaker === "Francisco+de+Goya"
+        );
+
+        goyaData.map(function (x) {
+          rijksContainer.insertAdjacentHTML(
+            "beforeend",
+            `
+       <li>
+          <a href="#painting/${x.id}" > <img src=${x.webImage.url} alt=""> </a>
+       </li>`
+          );
+          i++;
+        });
+      }),
+      // Wanneer er geen filter button is geselecteerd
+      art.map(function (x) {
+        rijksContainer.insertAdjacentHTML(
+          "beforeend",
+          `
          <li>
             <a href="#painting/${x.id}" > <img src=${x.webImage.url} alt=""> </a>
          </li>`
-      );
-      i++;
-    });
+        );
+        i++;
+      });
   },
 
   // Rederen Detailpagina
-  renderDetail: function(art, id) {
+  renderDetail: function (art, id) {
     const activeSection = document.querySelector("[data-route=painting]");
 
     function isLongEnough(value) {
       return value.title.length > 30;
     }
-    const newData = art.filter(isLongEnough);
+    // const newData = art.filter(isLongEnough);
 
     // acc = accumulator (getelde waarde)
     // cur = currentValue (huidige waarde)
@@ -107,12 +126,12 @@ export const render = {
     );
   },
 
-  remove: function() {
+  remove: function () {
     let div = document.getElementById("overview");
     // While
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
     while (div.firstChild) {
       div.removeChild(div.firstChild);
     }
-  }
+  },
 };
