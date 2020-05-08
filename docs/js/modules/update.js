@@ -5,20 +5,26 @@ import { api } from "./api.js";
 // update UI from route (hashchange)
 // Class toevoegen en verwijderen
 export const update = {
-  updateUI: function(id) {
+  updateUI: function (id) {
     // ID van schilderij ophalen
     let section = document.getElementById("painting");
 
-    //Class wrapper wordt verwijderd (Zodat alleen detailpagina wordt weergegeven)
+    //Children class wrapper worden verwijderd (Zodat alleen detailpagina wordt weergegeven, en niet het gehele overzicht)
     let wrapper = document.querySelector(".wrapper");
-    wrapper.remove();
+
+    // While
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+    while (wrapper.firstChild) {
+      wrapper.removeChild(wrapper.firstChild);
+    }
+
     section.classList.remove("active");
 
     // Voegt class active toe, en haalt de data voor detailpagina op
     section.classList.add("active");
-    api.getData().then(data => {
+    api.getData().then((data) => {
       const art = data.artObjects;
       render.renderDetail(art, id);
     });
-  }
+  },
 };
