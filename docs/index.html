@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Web App From Scratch - Minor Web Development - CMD Amsterdam</title>
+</head>
+
+<body>
+  <header id="#top">
+    <h1>Het Rijksmuseum</h1>
+    <h2>Amsterdam</h2>
+
+    <div class="buttons">
+      <a href="index.html" class="home">Overzicht</a>
+      <button class="vRijn">Rembrandt van Rijn</button>
+      <button class="Cosimo">Piero di Cosimo</button>
+    </div>
+
+    <!-- <div class="filter">
+      <h1>Select models</h1>
+      <div class="checkbox">
+        <label><input type="checkbox" rel="apple" onchange="change()" />Apple</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" rel="samsung" onchange="change()" />Samsung</label>
+      </div> -->
+  </header>
+
+  <main id="content">
+    <div id="overview"></div>
+    <section data-route="painting" id="painting"></section>
+  </main>
+  <script src="lib/routie.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
