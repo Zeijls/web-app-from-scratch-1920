@@ -62,15 +62,42 @@ Na het clonen, open het `index.html` bestnd in je localhost.
 
 ## API
 
-In deze applicatie gebruik ik de API van het Rijksmuseum. In deze API is een groot deel van de collectie van het Rijksmuseum verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd in deze API.
+Ik gebruik de API van het Rijksmuseum. In deze API is een groot deel van de gehele collectie verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd.
 
 Om gebruik te maken van de API van het Rijksmuseum heb je een key nodig. Deze kun je aanvragen bij de gevanceerde account instellingen op de site van het Rijksumseum. https://www.rijksmuseum.nl/en/rijksstudio/
 
-Ik heb alleen de schilderijen van Rembrandt van Rijn gebruikt door de volgende endpoints te gebruiken.
+Om bijvoorbeeld alleen de schilderijen van Rembrandt van Rijn weer te geven kun je de volgende endpoints gebruiken.
 
 > const rijksAPI = baseURl + key + involvedMaker + maker;
 
-Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder uitgezocht door middel van Map, Filter en Reduce.
+Er blijven dan 9 schilderijen over. Voor de herkansing heb ik dit endpoint uit mijn project verwijderd. Je kunt wel filteren op de schilder Rembrandt door een button bovenaan de pagina. Het filter wordt toegepast door het volgende stukje code:
+
+```js
+// Filter Rembrandt van Rijn
+// https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+const rijnButton = document.querySelector(".vRijn");
+rijnButton.addEventListener("click", getRijnData);
+
+const artData = art;
+function getRijnData() {
+  const rijnData = artData.filter((item) => {
+    return item.principalOrFirstMaker === "Rembrandt van Rijn";
+  });
+
+  removePaintings();
+
+  rijnData.map((x) => {
+    rijksContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+             <li>
+                <a href="#painting/${x.id}" > <img src=${x.webImage.url} alt=""> </a>
+             </li>`
+    );
+    i++;
+  });
+}
+```
 
 ## To Do
 
