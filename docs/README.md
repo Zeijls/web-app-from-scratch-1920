@@ -14,7 +14,7 @@
 - [Leerdoelen](#Leerdoelen)
 - [Gebruik](#Gebruiks)
 - [API](#API)
-- [Actor Diagram](#Actor-Diagram)
+- [Diagrams](#Diagrams)
 - [Interactive Diagram](#Interactive-Diagram)
 - [Wish List](#Wish-List)
 - [Bronnen](#Bronnen)
@@ -35,17 +35,13 @@
 
 ## Concept
 
-Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmuseum weergegeven. Zodra een schilderij wordt geselecteerd worden de details weergegeven. Als het ophalen van de schilderijen lang duurt is er een loadingstate.
+Op de webapplicatie zijn alle schilderijen van het Rijksmuseum weergegeven. Het is mogelijk om in de collectie te filteren op de schilderijen van Rembrandt van Rijn. Zodra een schilderij wordt geselecteerd worden de details weergegeven. Als het ophalen van de schilderijen lang duurt is er een loadingstate aanwezig.
 
 ## De structuur
 
-# Actor Diagram
+# Diagrams
 
-![Actor Diagram](./img/actordiagram.jpg)
-
-# Interactive Diagram
-
-![Interactive Diagram](./img/interactiveDiagram.png)
+<img width="1246" alt="Screenshot 2020-05-12 at 15 21 25" src="https://user-images.githubusercontent.com/45422060/81696528-4dbb9180-9464-11ea-97b2-df8d19d2c21f.png">
 
 ## Gebruik
 
@@ -108,7 +104,6 @@ Week 3
 ## Wish List
 
 - [x] Schilderijen van Rembrandt van Rijn ook in een filter zetten
-- [ ] Betere flow
 
 ## Bronnen
 

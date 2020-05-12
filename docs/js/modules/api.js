@@ -23,6 +23,9 @@ export const api = {
         // Als dit niet lukt, error
         .catch((err) => {
           reject(err);
+          alert(
+            "Sorry, we couldn't find any data. Try your internet connection"
+          );
         });
     });
   },
