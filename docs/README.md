@@ -94,8 +94,16 @@ function getRijnData() {
                 <a href="#painting/${x.id}" > <img src=${x.webImage.url} alt=""> </a>
              </li>`
     );
-    i++;
   });
+}
+
+function removePaintings() {
+  let element = document.getElementById("rijksContainer");
+  // While
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
 }
 ```
 
