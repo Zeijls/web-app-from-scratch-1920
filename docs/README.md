@@ -2,8 +2,9 @@
 
 ## Web App From Scratch @cmda-minor-web 1819
 
-![Overzichtspagina](img/overview.png)
-![Detailpagina](img/detail.png)
+<img width="1440" alt="Screenshot 2020-05-12 at 10 33 04" src="https://user-images.githubusercontent.com/45422060/81661193-0f11e100-943c-11ea-87ca-75fef4b14b73.png">
+<img width="1440" alt="Screenshot 2020-05-12 at 10 33 12" src="https://user-images.githubusercontent.com/45422060/81661202-10dba480-943c-11ea-854f-37d3defd3934.png">
+<img width="1440" alt="Screenshot 2020-05-12 at 10 33 21" src="https://user-images.githubusercontent.com/45422060/81661212-133dfe80-943c-11ea-8ff7-681a30f35173.png">
 
 ## Inhoudspagina
 
@@ -106,7 +107,7 @@ Week 3
 
 ## Wish List
 
-- [ ] Schilderijen van Rembrandt van Rijn ook in een filter zetten
+- [x] Schilderijen van Rembrandt van Rijn ook in een filter zetten
 - [ ] Betere flow
 
 ## Bronnen

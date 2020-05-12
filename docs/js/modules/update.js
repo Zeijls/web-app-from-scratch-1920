@@ -5,7 +5,7 @@ import { api } from "./api.js";
 // update UI from route (hashchange)
 // Class toevoegen en verwijderen
 export const update = {
-  updateUI: function (id) {
+  updateDetail: function (id) {
     // ID van schilderij ophalen
     let section = document.getElementById("painting");
 

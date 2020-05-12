@@ -12,7 +12,7 @@ export const router = {
       },
       // Naar detail pagina (als hierop geklikt wordt)
       "painting/:id": (id) => {
-        update.updateUI(id);
+        update.updateDetail(id);
       },
     });
   },
