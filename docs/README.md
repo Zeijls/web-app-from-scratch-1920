@@ -41,7 +41,7 @@ Op de webapplicatie zijn alle schilderijen van het Rijksmuseum weergegeven. Het 
 
 # Diagrams
 
-<img width="1246" alt="Screenshot 2020-05-12 at 15 21 25" src="https://user-images.githubusercontent.com/45422060/81696528-4dbb9180-9464-11ea-97b2-df8d19d2c21f.png">
+![image](https://user-images.githubusercontent.com/45422060/81850640-905e9600-9558-11ea-9318-6277ffb3c91a.png)
 
 ## Gebruik
 
